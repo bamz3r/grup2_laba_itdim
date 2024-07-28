@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^public/images/(.*)$ /tk3_grup2/public/images/$1 [L]
+RewriteRule ^(.*)$ /tk3_grup2/index.php?url=$1 [QSA,L]
