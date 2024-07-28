@@ -17,6 +17,7 @@
         <th>Tanggal Pembelian</th>
         <th>Jumlah Penjualan</th>
         <th>Harga Jual</th>
+        <th>Total Harga</th>
     </tr>
     <?php foreach ($penjualan as $item): ?>
         <tr>
@@ -25,8 +26,9 @@
             <td><?= $item['IdBarang'] ?></td>
             <td><?= $item['IdPelanggan'] ?></td>
             <td><?= $item['TanggalPembelian'] ?></td>
-            <td><?= $item['JumlahPenjualan'] ?></td>
-            <td><?= $item['HargaJual'] ?></td>
+            <td class="text-right"><?= number_format($item['JumlahPenjualan'],0,",","."); ?></td>
+            <td class="text-right"><?= number_format($item['HargaJual'],0,",","."); ?></td>
+            <td class="text-right"><?= number_format($item['JumlahPenjualan'] * $item['HargaJual'],0,",","."); ?></td>
         </tr>
     <?php endforeach; ?>
 </table>
