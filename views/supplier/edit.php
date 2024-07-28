@@ -17,7 +17,7 @@
                 <form action="<?= $base_url ?>supplier/update/<?= $supplier['IdSupplier'] ?>" method="POST">
                     <div class="mb-3">
                         <label>ID Supplier:</label>
-                        <input type="text" class="form-control" name="IdSupplier" value="<?= $supplier['IdSupplier'] ?>" readonly><br>
+                        <input type="text" class="form-control" name="IdSupplier" value="<?= $supplier['IdSupplier'] ?>"><br>
                     </div>
                     <div class="mb-3">
                         <label>Nama Supplier:</label>
@@ -31,7 +31,7 @@
             <div class="col-md-4">
                     <div class="mb-3">
                         <label>Password:</label>
-                        <input type="text" class="form-control" name="Password" value="" placeholder="tidak diubah" autocomplete="no" readonly><br>
+                        <input type="text" class="form-control" name="Password" value="" placeholder="tidak diubah" autocomplete="no"><br>
                     </div>
                     <div class="mb-3">
                         <label>Alamat:</label>
