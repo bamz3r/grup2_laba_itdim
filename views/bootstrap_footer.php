@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Anggota Kelompok 2 LABA ITDM 2024</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Anggota Kelompok 2 LABA ITDIM 2024</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <td>1.</td>
-                        <td>Bambang Riswanto</td>
+                        <td>BAMBANG RISWANTO</td>
                         <td>2702468472</td>
                     </tr>
                     <tr>

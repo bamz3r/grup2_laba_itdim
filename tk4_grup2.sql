@@ -110,26 +110,26 @@ CREATE TABLE `Pengguna` (
 --
 
 INSERT INTO `Pengguna` (`IdPengguna`, `IdAkses`, `NamaPengguna`, `Password`, `NamaDepan`, `NamaBelakang`, `NoHP`, `Alamat`) VALUES
-('PG1', 'AK1', 'admin', 'passadmin', 'Admin', 'Satu', '081234567890', 'Jl. Mawar No. 1'),
-('PG10', 'AK10', 'pengunjung', 'passpengunjung', 'Pengunjung', 'Sepuluh', '081234567899', 'Jl. Mawar No. 10'),
-('PG11', 'AK11', 'admin2', 'passadmin2', 'Admin', 'Dua', '081234567800', 'Jl. Mawar No. 11'),
-('PG12', 'AK12', 'support', 'passsupport', 'Support', 'Tiga', '081234567801', 'Jl. Mawar No. 12'),
-('PG13', 'AK13', 'kepalabagian', 'passkepalabagian', 'Kepala', 'Empat', '081234567802', 'Jl. Mawar No. 13'),
-('PG14', 'AK14', 'supervisor', 'passsupervisor', 'Supervisor', 'Lima', '081234567803', 'Jl. Mawar No. 14'),
-('PG15', 'AK15', 'teknisi', 'passteknisi', 'Teknisi', 'Enam', '081234567804', 'Jl. Mawar No. 15'),
-('PG16', 'AK16', 'peneliti', 'passpeneliti', 'Peneliti', 'Tujuh', '081234567805', 'Jl. Mawar No. 16'),
-('PG17', 'AK17', 'analis', 'passanalis', 'Analis', 'Delapan', '081234567806', 'Jl. Mawar No. 17'),
-('PG18', 'AK18', 'pustakawan', 'passpustakawan', 'Pustakawan', 'Sembilan', '081234567807', 'Jl. Mawar No. 18'),
-('PG19', 'AK19', 'pengawas', 'passpengawas', 'Pengawas', 'Sepuluh', '081234567808', 'Jl. Mawar No. 19'),
-('PG2', 'AK2', 'user', 'passuser', 'User', 'Dua', '081234567891', 'Jl. Mawar No. 2'),
-('PG20', 'AK20', 'penyuluh', 'passpenyuluh', 'Penyuluh', 'Sebelas', '081234567809', 'Jl. Mawar No. 20'),
-('PG3', 'AK3', 'manager', 'passmanager', 'Manager', 'Tiga', '081234567892', 'Jl. Mawar No. 3'),
-('PG4', 'AK4', 'kasir', 'passkasir', 'Kasir', 'Empat', '081234567893', 'Jl. Mawar No. 4'),
-('PG5', 'AK5', 'dokter', 'passdokter', 'Dokter', 'Lima', '081234567894', 'Jl. Mawar No. 5'),
-('PG6', 'AK6', 'perawat', 'passperawat', 'Perawat', 'Enam', '081234567895', 'Jl. Mawar No. 6'),
-('PG7', 'AK7', 'staf', 'passstaf', 'Staf', 'Tujuh', '081234567896', 'Jl. Mawar No. 7'),
-('PG8', 'AK8', 'supplier', 'passsupplier', 'Supplier', 'Delapan', '081234567897', 'Jl. Mawar No. 8'),
-('PG9', 'AK9', 'pelanggan', 'passpelanggan', 'Pelanggan', 'Sembilan', '081234567898', 'Jl. Mawar No. 9');
+('PG1', 'AK1', 'admin', '7a25b0bc04e77a2f7453dd021168cdc2', 'Admin', 'Satu', '081234567890', 'Jl. Mawar No. 1'),
+('PG10', 'AK10', 'pengunjung', 'bbc1d860ff70fe3de14aaab32a968ab1', 'Pengunjung', 'Sepuluh', '081234567899', 'Jl. Mawar No. 10'),
+('PG11', 'AK11', 'admin2', '7c5576e7035a4d8f403dda0e3f58634a', 'Admin', 'Dua', '081234567800', 'Jl. Mawar No. 11'),
+('PG12', 'AK12', 'support', '9fccba8456002aa646ba641070725153', 'Support', 'Tiga', '081234567801', 'Jl. Mawar No. 12'),
+('PG13', 'AK13', 'kepalabagian', '80613ad88c7f0b1313c90f5e18ebeaed', 'Kepala', 'Empat', '081234567802', 'Jl. Mawar No. 13'),
+('PG14', 'AK14', 'supervisor', '69dc79b2bb550b31bbfe36a9ccf37d10', 'Supervisor', 'Lima', '081234567803', 'Jl. Mawar No. 14'),
+('PG15', 'AK15', 'teknisi', 'f618b6db84fe586eb15f80c92cbad42a', 'Teknisi', 'Enam', '081234567804', 'Jl. Mawar No. 15'),
+('PG16', 'AK16', 'peneliti', 'a974141477ce8259cb690ebde69dc346', 'Peneliti', 'Tujuh', '081234567805', 'Jl. Mawar No. 16'),
+('PG17', 'AK17', 'analis', '4e655767ab2e5590671a1cfbbc94be22', 'Analis', 'Delapan', '081234567806', 'Jl. Mawar No. 17'),
+('PG18', 'AK18', 'pustakawan', '16b455892404dbd554124e5b4870503f', 'Pustakawan', 'Sembilan', '081234567807', 'Jl. Mawar No. 18'),
+('PG19', 'AK19', 'pengawas', 'c451d777a1057940831f3662a6d0833e', 'Pengawas', 'Sepuluh', '081234567808', 'Jl. Mawar No. 19'),
+('PG2', 'AK2', 'user', '7f409a7c046daea1c2c60502d7e2becc', 'User', 'Dua', '081234567891', 'Jl. Mawar No. 2'),
+('PG20', 'AK20', 'penyuluh', '44f33c548574068fce0190a70a0ede30', 'Penyuluh', 'Sebelas', '081234567809', 'Jl. Mawar No. 20'),
+('PG3', 'AK3', 'manager', '5fe682d0190e587a657960d601a944a0', 'Manager', 'Tiga', '081234567892', 'Jl. Mawar No. 3'),
+('PG4', 'AK4', 'kasir', 'f9681ff3b1e808e3bbb6f9d80ae62fd1', 'Kasir', 'Empat', '081234567893', 'Jl. Mawar No. 4'),
+('PG5', 'AK5', 'dokter', '2a68e7bc8189c4af4d3234d737e857bf', 'Dokter', 'Lima', '081234567894', 'Jl. Mawar No. 5'),
+('PG6', 'AK6', 'perawat', '99326c28c8adca4882eb8e98e4e163fc', 'Perawat', 'Enam', '081234567895', 'Jl. Mawar No. 6'),
+('PG7', 'AK7', 'staf', '65d4e072a189f966325ab9dc6fd28ab7', 'Staf', 'Tujuh', '081234567896', 'Jl. Mawar No. 7'),
+('PG8', 'AK8', 'supplier', '0019acc8385e61a491a867e03bf9bee7', 'Supplier', 'Delapan', '081234567897', 'Jl. Mawar No. 8'),
+('PG9', 'AK9', 'pelanggan', '5d1ce7c1daca28e6766d58d92dff6140', 'Pelanggan', 'Sembilan', '081234567898', 'Jl. Mawar No. 9');
 
 -- --------------------------------------------------------
 
