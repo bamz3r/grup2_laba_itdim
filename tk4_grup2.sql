@@ -102,7 +102,7 @@ CREATE TABLE `Pengguna` (
  PRIMARY KEY (`IdPengguna`),
  UNIQUE KEY `NamaPengguna` (`NamaPengguna`) USING BTREE,
  KEY `IdAkses` (`IdAkses`),
- CONSTRAINT `pengguna_ibfk_1` FOREIGN KEY (`IdAkses`) REFERENCES `hakakses` (`IdAkses`)
+ CONSTRAINT `pengguna_ibfk_1` FOREIGN KEY (`IdAkses`) REFERENCES `hakakses` (`IdAkses`) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `Barang` (
  `Satuan` varchar(20) DEFAULT NULL,
  PRIMARY KEY (`IdBarang`),
  KEY `IdPengguna` (`IdPengguna`),
- CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`IdPengguna`) REFERENCES `pengguna` (`IdPengguna`)
+ CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`IdPengguna`) REFERENCES `pengguna` (`IdPengguna`) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -234,9 +234,9 @@ CREATE TABLE `Pembelian` (
  KEY `IdPengguna` (`IdPengguna`),
  KEY `IdBarang` (`IdBarang`),
  KEY `IdSupplier` (`IdSupplier`),
- CONSTRAINT `pembelian_ibfk_1` FOREIGN KEY (`IdPengguna`) REFERENCES `pengguna` (`IdPengguna`),
- CONSTRAINT `pembelian_ibfk_2` FOREIGN KEY (`IdBarang`) REFERENCES `barang` (`IdBarang`),
- CONSTRAINT `pembelian_ibfk_3` FOREIGN KEY (`IdSupplier`) REFERENCES `supplier` (`IdSupplier`) ON UPDATE CASCADE
+ CONSTRAINT `pembelian_ibfk_1` FOREIGN KEY (`IdPengguna`) REFERENCES `pengguna` (`IdPengguna`) ON UPDATE CASCADE ON DELETE CASCADE,
+ CONSTRAINT `pembelian_ibfk_2` FOREIGN KEY (`IdBarang`) REFERENCES `barang` (`IdBarang`) ON UPDATE CASCADE ON DELETE CASCADE,
+ CONSTRAINT `pembelian_ibfk_3` FOREIGN KEY (`IdSupplier`) REFERENCES `supplier` (`IdSupplier`)  ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -278,9 +278,9 @@ CREATE TABLE `Penjualan` (
  KEY `IdPengguna` (`IdPengguna`),
  KEY `IdBarang` (`IdBarang`),
  KEY `penjualan_ibfk_3` (`IdPelanggan`),
- CONSTRAINT `penjualan_ibfk_1` FOREIGN KEY (`IdPengguna`) REFERENCES `pengguna` (`IdPengguna`),
- CONSTRAINT `penjualan_ibfk_2` FOREIGN KEY (`IdBarang`) REFERENCES `barang` (`IdBarang`),
- CONSTRAINT `penjualan_ibfk_3` FOREIGN KEY (`IdPelanggan`) REFERENCES `pelanggan` (`IdPelanggan`)
+ CONSTRAINT `penjualan_ibfk_1` FOREIGN KEY (`IdPengguna`) REFERENCES `pengguna` (`IdPengguna`) ON UPDATE CASCADE ON DELETE CASCADE,
+ CONSTRAINT `penjualan_ibfk_2` FOREIGN KEY (`IdBarang`) REFERENCES `barang` (`IdBarang`) ON UPDATE CASCADE ON DELETE CASCADE,
+ CONSTRAINT `penjualan_ibfk_3` FOREIGN KEY (`IdPelanggan`) REFERENCES `pelanggan` (`IdPelanggan`) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
