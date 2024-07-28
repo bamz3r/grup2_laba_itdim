@@ -1,7 +1,7 @@
 <?php
 class MyDatabase {
     private $host = "localhost";
-    private $db_name = "tk3_grup2";
+    private $db_name = "tk4_grup2";
     private $username = "root";
     private $password = "";
     public $conn;
