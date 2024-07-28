@@ -22,7 +22,7 @@
                                 <input type="radio" name="login_type" value="pelanggan"> Pelanggan
                             </label>
                             <label class="ml-2">
-                                <input type="radio" name="login_type" value="pelanggan"> Supplier
+                                <input type="radio" name="login_type" value="supplier"> Supplier
                             </label>
                         </div>
                         <label for="username" class="sr-only">Nama Pengguna</label>

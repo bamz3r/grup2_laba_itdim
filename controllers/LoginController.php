@@ -30,6 +30,7 @@ class LoginController extends BaseController {
             $_SESSION['login_type'] = $loginType;
             header('Location: '.Config::getBaseUrl());
         } else {
+            $_SESSION['error_message'] = "Login ". $loginType ." salah";
             header('Location: '.Config::getBaseUrl().'login');
         }
     }

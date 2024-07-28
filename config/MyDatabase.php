@@ -12,7 +12,7 @@ class MyDatabase {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->conn->exec("set names utf8");
         } catch(PDOException $exception) {
-            echo "Koneksi db error: " . $exception->getMessage();
+            die("Koneksi db error: " . $exception->getMessage());
         }
         return $this->conn;
     }
