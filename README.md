@@ -10,4 +10,6 @@ Tugas Kelompok Grup 2 LABA ITDIM Bina Nusantara 2024
 How to install
 - pastikan file web nya disimpan di folder 'tk4_grup2' pada htdocs agar sesuai pada nama di file .htaccess, 
 - jika berbeda silahkan update file '.htaccess' sesuai nama folder nya
+- buat db pada phpmyadmin dengan nama 'tk4_grup2' lalu import sql nya dari file 'tk4_grup2.sql'
+- jika nama, password atau host database berbeda, silahkan ubah pengauturan database pada file config/MyDatabase.php
 
