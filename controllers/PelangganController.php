@@ -16,16 +16,15 @@ class PelangganController extends BaseController {
 
     public function store() {
         $pelanggan = new Pelanggan();
-        $pelanggan->IdPelanggan = $_POST['IdPelanggan'];
-        $pelanggan->NamaPengguna = $_POST['NamaPengguna'];
-        if (!empty($_POST['Password'])) {
-            $pelanggan->Password = md5($_POST['Password']);
+        $columns = ['IdPelanggan', 'NamaPengguna', 'Password', 'NamaDepan', 'NamaBelakang', 'NoHP', 'Alamat'];
+        foreach ($columns as $column) {
+            if ($column == "Password") {
+                $pelanggan->{$column} = md5($_POST[$column]);
+            } else {
+                $pelanggan->{$column} = $_POST[$column];
+            }
         }
-        $pelanggan->NamaDepan = $_POST['NamaDepan'];
-        $pelanggan->NamaBelakang = $_POST['NamaBelakang'];
-        $pelanggan->NoHP = $_POST['NoHP'];
-        $pelanggan->Alamat = $_POST['Alamat'];
-        $pelanggan->save();
+        $pelanggan->save($columns);
         header('Location: '.Config::getBaseUrl().'pelanggan');
     }
 
@@ -37,14 +36,18 @@ class PelangganController extends BaseController {
 
     public function update($id) {
         $pelanggan = new Pelanggan();
-        $pelanggan->IdPelanggan = $id;
-        $pelanggan->NamaPengguna = $_POST['NamaPengguna'];
-        $pelanggan->Password = md5($_POST['Password']);
-        $pelanggan->NamaDepan = $_POST['NamaDepan'];
-        $pelanggan->NamaBelakang = $_POST['NamaBelakang'];
-        $pelanggan->NoHP = $_POST['NoHP'];
-        $pelanggan->Alamat = $_POST['Alamat'];
-        $pelanggan->update();
+        $columns = ['IdPelanggan', 'NamaPengguna', 'NamaDepan', 'NamaBelakang', 'NoHP', 'Alamat'];
+        if (!empty($_POST['Password'])) {
+            array_push($columns, 'Password');
+        }
+        foreach ($columns as $column) {
+            if ($column == "Password") {
+                $pelanggan->{$column} = md5($_POST[$column]);
+            } else {
+                $pelanggan->{$column} = $_POST[$column];
+            }
+        }
+        $pelanggan->update($columns, $id);
         header('Location: '.Config::getBaseUrl().'pelanggan');
     }
 

@@ -17,7 +17,6 @@
         <th>Tanggal Pembelian</th>
         <th>Jumlah Pembelian</th>
         <th>Harga Beli</th>
-        <th>Aksi</th>
     </tr>
     <?php foreach ($pembelian as $item): ?>
         <tr>
@@ -28,10 +27,6 @@
             <td><?= $item['TanggalPembelian'] ?></td>
             <td><?= $item['JumlahPembelian'] ?></td>
             <td><?= $item['HargaBeli'] ?></td>
-            <td>
-                <a class="btn btn-info btn-sm" href="<?= $base_url;?>pembelian/edit/<?= $item['IdPembelian'] ?>">Edit</a>
-                <a class="btn btn-danger btn-sm" href="<?= $base_url;?>pembelian/delete/<?= $item['IdPembelian'] ?>">Hapus</a>
-            </td>
         </tr>
     <?php endforeach; ?>
 </table>

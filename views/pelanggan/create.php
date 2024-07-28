@@ -7,7 +7,7 @@
 <body>
 <?php include_once $base_path."views/page_header.php"; ?>
 <h2 class="h2 mt-5">Tambah Pelanggan</h2>
-<form action="/pelanggan/store" method="POST">
+<form action="<?= $base_url ?>pelanggan/store" method="POST">
     <label>ID Pelanggan:</label>
     <input type="text" name="IdPelanggan"><br>
     <label>Nama Pengguna:</label>

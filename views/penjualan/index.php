@@ -17,7 +17,6 @@
         <th>Tanggal Pembelian</th>
         <th>Jumlah Penjualan</th>
         <th>Harga Jual</th>
-        <th>Aksi</th>
     </tr>
     <?php foreach ($penjualan as $item): ?>
         <tr>
@@ -28,10 +27,6 @@
             <td><?= $item['TanggalPembelian'] ?></td>
             <td><?= $item['JumlahPenjualan'] ?></td>
             <td><?= $item['HargaJual'] ?></td>
-            <td>
-                <a class="btn btn-info btn-sm" href="<?= $base_url;?>penjualan/edit/<?= $item['IdPenjualan'] ?>">Edit</a>
-                <a class="btn btn-danger btn-sm" href="<?= $base_url;?>penjualan/delete/<?= $item['IdPenjualan'] ?>">Hapus</a>
-            </td>
         </tr>
     <?php endforeach; ?>
 </table>

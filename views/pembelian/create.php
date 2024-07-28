@@ -7,7 +7,7 @@
 <body>
 <?php include_once $base_path."views/page_header.php"; ?>
 <h2 class="h2 mt-5">Tambah Pembelian</h2>
-<form action="/pembelian/store" method="POST">
+<form action="<?= $base_url ?>pembelian/store" method="POST">
     <label>ID Pembelian:</label>
     <input type="text" name="IdPembelian"><br>
     <label>ID Pengguna:</label>

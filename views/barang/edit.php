@@ -21,7 +21,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="IdPengguna">Id Pengguna "<?= $barang['IdPengguna'] ?>"</label>
+                <label for="IdPengguna">Id Pengguna</label>
                 <select class="custom-select d-block w-100" id="IdPengguna" name="IdPengguna" required>
                     <option value="">Pilih...</option>
                     <?php foreach ($data['pengguna_list'] as $item): ?>

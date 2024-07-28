@@ -16,15 +16,18 @@ class PenggunaController extends BaseController {
 
     public function store() {
         $pengguna = new Pengguna();
-        $pengguna->IdPengguna = $_POST['IdPengguna'];
-        $pengguna->IdAkses = $_POST['IdAkses'];
-        $pengguna->NamaPengguna = $_POST['NamaPengguna'];
-        $pengguna->Password = $_POST['Password'];
-        $pengguna->NamaDepan = $_POST['NamaDepan'];
-        $pengguna->NamaBelakang = $_POST['NamaBelakang'];
-        $pengguna->NoHP = $_POST['NoHP'];
-        $pengguna->Alamat = $_POST['Alamat'];
-        $pengguna->save();
+        $columns = ['IdPengguna', 'IdAkses', 'NamaPengguna', 'NamaDepan', 'NamaBelakang', 'NoHP', 'Alamat'];
+        if (!empty($_POST['Password'])) {
+            array_push($columns, 'Password');
+        }
+        foreach ($columns as $column) {
+            if ($column == "Password") {
+                $pengguna->{$column} = md5($_POST[$column]);
+            } else {
+                $pengguna->{$column} = $_POST[$column];
+            }
+        }
+        $pengguna->save($columns);
         header('Location: '.Config::getBaseUrl().'pengguna');
     }
 
@@ -36,15 +39,18 @@ class PenggunaController extends BaseController {
 
     public function update($id) {
         $pengguna = new Pengguna();
-        $pengguna->IdPengguna = $id;
-        $pengguna->IdAkses = $_POST['IdAkses'];
-        $pengguna->NamaPengguna = $_POST['NamaPengguna'];
-        $pengguna->Password = $_POST['Password'];
-        $pengguna->NamaDepan = $_POST['NamaDepan'];
-        $pengguna->NamaBelakang = $_POST['NamaBelakang'];
-        $pengguna->NoHP = $_POST['NoHP'];
-        $pengguna->Alamat = $_POST['Alamat'];
-        $pengguna->update();
+        $columns = ['IdPengguna', 'IdAkses', 'NamaPengguna', 'Password', 'NamaDepan', 'NamaBelakang', 'NoHP', 'Alamat'];
+        if (!empty($_POST['Password'])) {
+            array_push($columns, 'Password');
+        }
+        foreach ($columns as $column) {
+            if ($column == "Password") {
+                $pengguna->{$column} = md5($_POST[$column]);
+            } else {
+                $pengguna->{$column} = $_POST[$column];
+            }
+        }
+        $pengguna->update($columns, $id);
         header('Location: '.Config::getBaseUrl().'pengguna');
     }
 

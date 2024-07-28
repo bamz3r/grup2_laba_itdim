@@ -7,7 +7,7 @@
 <body>
 <?php include_once $base_path."views/page_header.php"; ?>
 <h2 class="h2 mt-5">Edit Pengguna</h2>
-<form action="/pengguna/update/<?= $pengguna['IdPengguna'] ?>" method="POST">
+<form action="<?= $base_url ?>pengguna/update/<?= $pengguna['IdPengguna'] ?>" method="POST">
     <label>ID Pengguna:</label>
     <input type="text" name="IdPengguna" value="<?= $pengguna['IdPengguna'] ?>" readonly><br>
     <label>ID Akses:</label>

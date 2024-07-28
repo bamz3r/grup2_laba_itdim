@@ -10,17 +10,13 @@
     <div class="col-md-4">
         <h2 class="mt-5">Tambah Barang</h2>
 
-        <form action="barang/store" method="POST" class="needs-validation" novalidate="">
+        <form action="<?= $base_url ?>barang/store" method="POST" class="needs-validation" novalidate="">
+
             <div class="mb-3">
-                <label for="IdBarang">Username</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">BR</span>
-                    </div>
-                    <input type="text" class="form-control" id="IdBarang" name="IdBarang" placeholder="XXXXX" value="" required="">
-                    <div class="invalid-feedback" style="width: 100%;">
-                        Harap isi Id Barang.
-                    </div>
+                <label for="IdBarang">Id Barang</label>
+                <input type="text" class="form-control" id="IdBarang" name="IdBarang" value="" placeholder="format BRXXX" required>
+                <div class="invalid-feedback">
+                    Harap isi Id Barang.
                 </div>
             </div>
 

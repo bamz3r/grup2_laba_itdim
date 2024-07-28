@@ -15,11 +15,12 @@ class HakAksesController extends BaseController {
     }
 
     public function store() {
+        $columns = ['IdAkses', 'NamaAkses', 'Keterangan'];
         $hakAkses = new HakAkses();
-        $hakAkses->IdAkses = $_POST['IdAkses'];
-        $hakAkses->NamaAkses = $_POST['NamaAkses'];
-        $hakAkses->Keterangan = $_POST['Keterangan'];
-        $hakAkses->save();
+        foreach ($columns as $column) {
+            $hakAkses->{$column} = $_POST[$column];
+        }
+        $hakAkses->save($columns);
         header('Location: '.Config::getBaseUrl().'hakAkses');
     }
 
@@ -30,11 +31,12 @@ class HakAksesController extends BaseController {
     }
 
     public function update($id) {
+        $columns = ['IdAkses', 'NamaAkses', 'Keterangan'];
         $hakAkses = new HakAkses();
-        $hakAkses->IdAkses = $id;
-        $hakAkses->NamaAkses = $_POST['NamaAkses'];
-        $hakAkses->Keterangan = $_POST['Keterangan'];
-        $hakAkses->update();
+        foreach ($columns as $column) {
+            $hakAkses->{$column} = $_POST[$column];
+        }
+        $hakAkses->update($columns, $id);
         header('Location: '.Config::getBaseUrl().'hakAkses');
     }
 

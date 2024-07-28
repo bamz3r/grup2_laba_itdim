@@ -16,33 +16,11 @@ class PenjualanController extends BaseController {
 
     public function store() {
         $penjualan = new Penjualan();
-        $penjualan->IdPenjualan = $_POST['IdPenjualan'];
-        $penjualan->IdPengguna = $_POST['IdPengguna'];
-        $penjualan->IdBarang = $_POST['IdBarang'];
-        $penjualan->IdPelanggan = $_POST['IdPelanggan'];
-        $penjualan->TanggalPembelian = $_POST['TanggalPembelian'];
-        $penjualan->JumlahPenjualan = $_POST['JumlahPenjualan'];
-        $penjualan->HargaJual = $_POST['HargaJual'];
-        $penjualan->save();
-        header('Location: '.Config::getBaseUrl().'penjualan');
-    }
-
-    public function edit($id) {
-        $penjualan = new Penjualan();
-        $data['penjualan'] = $penjualan->find($id);
-        $this->view('penjualan/edit', $data);
-    }
-
-    public function update($id) {
-        $penjualan = new Penjualan();
-        $penjualan->IdPenjualan = $id;
-        $penjualan->IdPengguna = $_POST['IdPengguna'];
-        $penjualan->IdBarang = $_POST['IdBarang'];
-        $penjualan->IdPelanggan = $_POST['IdPelanggan'];
-        $penjualan->TanggalPembelian = $_POST['TanggalPembelian'];
-        $penjualan->JumlahPenjualan = $_POST['JumlahPenjualan'];
-        $penjualan->HargaJual = $_POST['HargaJual'];
-        $penjualan->update();
+        $columns = ['IdPenjualan', 'IdPengguna', 'IdBarang', 'IdPelanggan', 'TanggalPembelian', 'JumlahPenjualan', 'HargaJual'];
+        foreach ($columns as $column) {
+            $penjualan->{$column} = $_POST[$column];
+        }
+        $penjualan->save($columns);
         header('Location: '.Config::getBaseUrl().'penjualan');
     }
 

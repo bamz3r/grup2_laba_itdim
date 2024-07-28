@@ -7,7 +7,7 @@
 <body>
 <?php include_once $base_path."views/page_header.php"; ?>
 <h2 class="h2 mt-5">Edit Hak Akses</h2>
-<form action="/hakAkses/update/<?= $hakAkses['IdAkses'] ?>" method="POST">
+<form action="<?= $base_url ?>hakAkses/update/<?= $hakAkses['IdAkses'] ?>" method="POST">
     <label>ID Akses:</label>
     <input type="text" name="IdAkses" value="<?= $hakAkses['IdAkses'] ?>" readonly><br>
     <label>Nama Akses:</label>
