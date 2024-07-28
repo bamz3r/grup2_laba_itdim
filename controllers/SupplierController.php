@@ -1,5 +1,7 @@
 <?php
 require_once BASE_DIR.'models/Supplier.php';
+require_once BASE_DIR.'models/Pengguna.php';
+
 
 CheckLogin::check();
 class SupplierController extends BaseController {
@@ -11,10 +13,13 @@ class SupplierController extends BaseController {
     }
 
     public function create() {
-        $this->view('supplier/create');
+        $pengguna_list = new Pengguna();
+        $data['pengguna_list'] = $pengguna_list->all();
+        $this->view('supplier/create',$data);
     }
 
     public function store() {
+        
         $supplier = new Supplier();
         $columns = ['IdSupplier', 'NamaPengguna', 'Password', 'NamaSupplier', 'Alamat', 'NoTelp'];
         foreach ($columns as $column) {
@@ -31,6 +36,8 @@ class SupplierController extends BaseController {
     public function edit($id) {
         $supplier = new Supplier();
         $data['supplier'] = $supplier->find($id);
+        $pengguna_list = new Pengguna();
+        $data['pengguna_list'] = $pengguna_list->all();
         $this->view('supplier/edit', $data);
     }
 
@@ -47,7 +54,7 @@ class SupplierController extends BaseController {
                 $supplier->{$column} = $_POST[$column];
             }
         }
-        $supplier->update($columns);
+        $supplier->update($columns,$id);
         header('Location: '.Config::getBaseUrl().'supplier');
     }
 
