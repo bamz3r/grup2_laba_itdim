@@ -9,29 +9,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
+                <li class="nav-item <?php echo ($current_page == 'home' ? 'active' : '')?>">
                     <a class="nav-link" href="<?= $base_url;?>">Dashboard</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item <?php echo ($current_page == 'barang' ? 'active' : '')?>">
                     <a class="nav-link" href="<?= $base_url;?>barang">Barang</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ($current_page == 'penjualan' ? 'active' : '')?>">
                     <a class="nav-link" href="<?= $base_url;?>penjualan">Penjualan</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ($current_page == 'pembelian' ? 'active' : '')?>">
                     <a class="nav-link" href="<?= $base_url;?>pembelian">Pembelian</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ($current_page == 'pengguna' ? 'active' : '')?>">
                     <a class="nav-link" href="<?= $base_url;?>pengguna">Pengguna</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ($current_page == 'supplier' ? 'active' : '')?>">
                     <a class="nav-link" href="<?= $base_url;?>supplier">Supplier</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ($current_page == 'pelanggan' ? 'active' : '')?>">
                     <a class="nav-link" href="<?= $base_url;?>pelanggan">Pelanggan</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= $base_url;?>pelanggan">Lap. Laba Rugi</a>
+                <li class="nav-item <?php echo ($current_page == 'labarugi' ? 'active' : '')?>">
+                    <a class="nav-link" href="<?= $base_url;?>labarugi">Lap. Laba Rugi</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
