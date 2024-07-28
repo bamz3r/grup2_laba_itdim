@@ -1,5 +1,6 @@
 <?php
-error_reporting(E_ALL);
+error_reporting(0);
+//error_reporting(E_ALL); // jika ingin show error
 define('BASE_DIR', __DIR__.'/');
 session_start();
 require_once __DIR__.'/config/Config.php';

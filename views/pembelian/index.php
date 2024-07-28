@@ -17,6 +17,7 @@
         <th>Tanggal Pembelian</th>
         <th>Jumlah Pembelian</th>
         <th>Harga Beli</th>
+        <th>Total Harga</th>
     </tr>
     <?php foreach ($pembelian as $item): ?>
         <tr>
@@ -25,8 +26,9 @@
             <td><?= $item['IdSupplier'] ?></td>
             <td><?= $item['IdBarang'] ?></td>
             <td><?= $item['TanggalPembelian'] ?></td>
-            <td><?= $item['JumlahPembelian'] ?></td>
-            <td><?= $item['HargaBeli'] ?></td>
+            <td class="text-right"><?= number_format($item['JumlahPembelian'],0,",","."); ?></td>
+            <td class="text-right"><?= number_format($item['HargaBeli'],0,",","."); ?></td>
+            <td class="text-right"><?= number_format($item['JumlahPembelian'] * $item['HargaBeli'],0,",","."); ?></td>
         </tr>
     <?php endforeach; ?>
 </table>

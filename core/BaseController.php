@@ -11,6 +11,7 @@ class BaseController {
 //        die($public_url);
         $user = $_SESSION['user'];
         $login_type = $_SESSION['login_type'];
+//        die($login_type);
         $error_message = $_SESSION['error_message'];
         $success_message = $_SESSION['success_message'];
         $current_page = $this->getCurrentControllerName();
