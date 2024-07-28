@@ -26,8 +26,8 @@
             <?php foreach ($labarugi as $item): ?>
                     <tr>
                         <td><?= $item['idBarang'] ?></td>
-                        <td><?= $item['StokTersedia'] ?></td>
                         <td><?= $item['NamaBarang'] ?></td>
+                        <td><?= $item['StokTersedia'] ?></td>
                         <td><?= number_format($item['TotalJumlahPenjualan'],0,",","."); ?></td>
                         <td><?= number_format($item['AvgHargaJual'],0,",","."); ?></td>
                         <td><?= number_format($item['AvgHargaBeli'],0,",","."); ?></td>
