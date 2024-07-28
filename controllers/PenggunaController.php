@@ -1,5 +1,6 @@
 <?php
 require_once BASE_DIR.'models/Pengguna.php';
+require_once BASE_DIR.'models/HakAkses.php';
 
 CheckLogin::check();
 class PenggunaController extends BaseController {
@@ -11,21 +12,16 @@ class PenggunaController extends BaseController {
     }
 
     public function create() {
-        $this->view('pengguna/create');
+        $hakakses_list = new HakAkses();
+        $data['hakakses_list'] = $hakakses_list->all();
+        $this->view('pengguna/create', $data);
     }
 
     public function store() {
         $pengguna = new Pengguna();
-        $columns = ['IdPengguna', 'IdAkses', 'NamaPengguna', 'NamaDepan', 'NamaBelakang', 'NoHP', 'Alamat'];
-        if (!empty($_POST['Password'])) {
-            array_push($columns, 'Password');
-        }
+        $columns = ['IdPengguna', 'IdAkses', 'NamaPengguna', 'Password', 'NamaDepan', 'NamaBelakang', 'NoHP', 'Alamat'];
         foreach ($columns as $column) {
-            if ($column == "Password") {
-                $pengguna->{$column} = md5($_POST[$column]);
-            } else {
-                $pengguna->{$column} = $_POST[$column];
-            }
+            $pengguna->{$column} = $_POST[$column];
         }
         $pengguna->save($columns);
         header('Location: '.Config::getBaseUrl().'pengguna');
@@ -34,28 +30,23 @@ class PenggunaController extends BaseController {
     public function edit($id) {
         $pengguna = new Pengguna();
         $data['pengguna'] = $pengguna->find($id);
+        $hakakses_list = new HakAkses();
+        $data['hakakses_list'] = $hakakses_list->all();
         $this->view('pengguna/edit', $data);
     }
 
     public function update($id) {
         $pengguna = new Pengguna();
         $columns = ['IdPengguna', 'IdAkses', 'NamaPengguna', 'Password', 'NamaDepan', 'NamaBelakang', 'NoHP', 'Alamat'];
-        if (!empty($_POST['Password'])) {
-            array_push($columns, 'Password');
-        }
         foreach ($columns as $column) {
-            if ($column == "Password") {
-                $pengguna->{$column} = md5($_POST[$column]);
-            } else {
-                $pengguna->{$column} = $_POST[$column];
-            }
+            $pengguna->{$column} = $_POST[$column];
         }
         $pengguna->update($columns, $id);
         header('Location: '.Config::getBaseUrl().'pengguna');
     }
 
     public function delete($id) {
-        $pengguna = new Pengguna();
+        $pengguna = new pengguna();
         $pengguna->delete($id);
         header('Location: '.Config::getBaseUrl().'pengguna');
     }
