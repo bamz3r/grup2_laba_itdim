@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php include_once $base_path."views/bootstrap_header.php"; ?>
-    <title>Data Barang</title>
+    <title>Login</title>
 </head>
 <body>
 <div class="container">
